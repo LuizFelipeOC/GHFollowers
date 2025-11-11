@@ -10,8 +10,8 @@ import UIKit
 class SearchViewController: UIViewController {
     
     let logoImageView = UIImageView()
-    let userNameTextField = GHTextField()
-    let callToActionButton = GHButton(backgroundColor: .systemGreen, title: "Get Followers")
+    let userNameTextField = GFTextField()
+    let callToActionButton = GFButton(backgroundColor: .systemGreen, title: "Get Followers")
     
     
     var isUsernameEntered: Bool {
@@ -41,6 +41,8 @@ class SearchViewController: UIViewController {
     
     @objc func pushToFollowersViewController() {
         guard isUsernameEntered else {
+            presentGFAlertOnMainThread(title: "Empty Username", message:"Please enter a username. We need to know who to look for.", buttonTitle: "OK")
+            
             return
         }
         
