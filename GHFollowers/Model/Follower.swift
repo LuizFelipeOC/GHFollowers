@@ -1,0 +1,13 @@
+//
+//  Follower.swift
+//  GHFollowers
+//
+//  Created by Luiz Felipe on 12/11/25.
+//
+
+import Foundation
+
+struct Follower: Codable{
+    var login: String
+    var avatarUrl: String
+}
