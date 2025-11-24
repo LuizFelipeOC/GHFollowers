@@ -11,7 +11,7 @@ fileprivate var containerView: UIView!
 
 extension UIViewController {
     
-   func presentGFAlertOnMainThread(title: String, message: String, buttonTitle: String) {
+    func presentGFAlertOnMainThread(title: String, message: String, buttonTitle: String) {
         DispatchQueue.main.async {
             let alertVC = GFAlertViewController(title: title, message: message, buttonTitle: buttonTitle)
             alertVC.modalPresentationStyle      = .overFullScreen
@@ -51,5 +51,12 @@ extension UIViewController {
             containerView.removeFromSuperview()
             containerView       = nil
         }
+    }
+    
+    func showEmptyStateView(with message: String, in view: UIView) {
+        let emptyStateView      = GFEmptyStateView(message: message)
+        emptyStateView.frame    = view.bounds
+        
+        view.addSubview(emptyStateView)
     }
 }
